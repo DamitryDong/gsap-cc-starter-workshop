@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const GsapTo = () => {
-  // TODO: Implement the gsap.to() method
+  // Implement the gsap.to(): to animates an object from its current state to a new state. 
   
   // First we will use the GSAP hook useGSAP which is kinda like a useEffect hook but with animations 
   useGSAP(() => {
@@ -11,7 +11,8 @@ const GsapTo = () => {
       repeat: -1, // repeat the animation infinitely
       yoyo: true, // reverse the animation
       rotation: 360, // rotate the element 360 degrees
-      duration: 1.2 //uration of the animation
+      duration: 1.2, //uration of the animation
+      ease: 'elastic' // easing function
     })
   }, []);
 

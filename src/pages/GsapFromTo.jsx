@@ -1,5 +1,26 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFromTo = () => {
-  // TODO: Implement the gsap.fromTo() method
+  // TODO: Implement the gsap.fromTo(): fromTo animates an object from a new state to a new state.
+
+  useGSAP(() => {
+    gsap.fromTo('#red-box', { //the first input is the from 
+        x: 0,
+        rotation: 0,
+        borderRadius: '0%',
+      },
+      { // the second input it the to
+        x: 250,
+        rotation: 360,
+        borderRadius: '100%',
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'bounce.out'
+      }
+    )
+  }, []);
 
   return (
     <main>

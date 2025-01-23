@@ -1,5 +1,19 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFrom = () => {
-  // TODO: Implement the gsap.from() method
+  // Implement the gsap.from(): from animates an object from a new state to its current state.
+
+  useGSAP(() => {
+    gsap.from('#green-box', {
+      x: 250, // This is now the starting position instead of the ending position
+      repeat: -1, // repeat the animation infinitely
+      yoyo: true, // reverse the animation
+      rotation: 360, // rotate the element 360 degrees
+      duration: 1.2, //uration of the animation
+      ease: 'elastic' // easing function
+    })
+  }, []);
 
   return (
     <main>
