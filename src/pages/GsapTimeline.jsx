@@ -1,5 +1,45 @@
-const GsapTimeline = () => {
-  // TODO: Implement the gsap timeline
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+  // Implement the gsap timeline: You can manually add delays to animations, but gsap timeline allows you to manage multiple animations in a single timeline without adding specific timers to code.
+  // first we must set the gsap.timeline to a variable and this basically is a variable we will add new animation to. 
+  const timeline = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+    repeatDelay: 1,
+  })
+
+const GsapTimeline = () => { 
+
+  useGSAP(() => {  //now we can add these differnt animations to the timeline with useGSAP hook
+    // we can then call the variable with a 'to' method and this will be the first animation in the timeline
+    timeline.to('#yellow-box', {
+      x: 250,
+      rotation: 360,
+      borderRadius: '100%',
+      duration: 2,
+      ease: 'back.inOut'
+    })
+
+    // this will be the next thing in the timeline
+    timeline.to('#yellow-box', {
+      x: 500,
+      scale: 1.5,
+      rotation: 360, 
+      borderRadius: '8px',
+      duration: 2,
+      ease: 'back.inOut'
+    })
+
+    timeline.to('#yellow-box', {
+      y: 100,
+      scale: .5 ,
+      rotation: 360, 
+      borderRadius: '50%',
+      duration: 2,
+      ease: 'back.inOut'
+    })
+  }, []);
 
   return (
     <main>
