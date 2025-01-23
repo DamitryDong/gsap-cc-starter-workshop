@@ -1,5 +1,19 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
+  
+  // First we will use the GSAP hook useGSAP which is kinda like a useEffect hook but with animations 
+  useGSAP(() => {
+    gsap.to('#blue-box', {
+      x: 250, // x is the short ofr translateX basically moving the element 250px to the right
+      repeat: -1, // repeat the animation infinitely
+      yoyo: true, // reverse the animation
+      rotation: 360, // rotate the element 360 degrees
+      duration: 1.2 //uration of the animation
+    })
+  }, []);
 
   return (
     <main>

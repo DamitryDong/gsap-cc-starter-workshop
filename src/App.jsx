@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+// WE HAVE TO DO (npm install gsap @gsap/react) for this to work since we need to stack.
 import {
   GsapFrom,
   GsapFromTo,
